@@ -49,9 +49,6 @@ contract Vault is Initializable {
     /// @param _amount The amount of the underlying asset to deposit
     /// @return success Whether the deposit operation was successful or not
     function deposit(address _erc20Contract, uint256 _amount) external returns (bool success){
-        //supporting only 1 user and 1 deposit address
-        require(_depositor == address(0), "NOT THE CURRENT DEPOSITOR");
-
         //would check against a mapping state variable here to check against valid erc20 tokens that are supported.
         //this mapping would be able to support updates and would be extended
         //mapping is out of scope. Only using usdt.
